@@ -111,7 +111,7 @@ body {
   }
 }
 .greeting {
-  // Пофиксить отступ сверху когда хэдэр будет фиксированным
+  //todo Пофиксить отступ сверху когда хэдэр будет фиксированным
   margin: 30px 0px 0px 0px;
   &__container {
     background: url("/img/greeting/Hero.png") right / cover no-repeat;
@@ -186,4 +186,15 @@ body {
     text-align: right;
   }
 }
-
+.clients {
+  &__container {
+  }
+  &__title {
+  }
+  &__description {
+  }
+  &__items {
+  }
+  &__item {
+  }
+}

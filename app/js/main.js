@@ -12,8 +12,8 @@ burgerElement.addEventListener("click", function () {
   menuItems.forEach(function (item) {
     item.classList.toggle("column");
   });
-});
-window.addEventListener("scroll", function () {
-  siteHeader.style = "position: fixed;" + "  top: 0;" + "  left: 0;" + "  right: 0;";
-});
+}); // window.addEventListener("scroll", () => {
+//   siteHeader.style =
+//     "position: fixed;" + "  top: 0;" + "  left: 0;" + "  right: 0;";
+// });
 //# sourceMappingURL=main.js.map
