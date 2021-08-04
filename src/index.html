@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#111111" />
+    <title>New site</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/0c4465ee7a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    @include('partials/header.html')
+    <section class="greeting">
+      <div class="greeting__container container">
+        <div class="greeting__content">
+          <h1 class="greeting__title">Go digital with us</h1>
+          <p class="greeting__text">
+            We have designed hundreds of websites and helped improve their
+            online performance through SEO, SEM and Social Media Marketing
+          </p>
+          <a href="#" class="greeting__button">See Portofolio</a>
+        </div>
+        <div class="greeting__banner greeting-banner">
+          <h2 class="greeting-banner__title title">We are experienced</h2>
+          <p class="greeting-banner__text">
+            We have been around for a long time since 2010, thousands of
+            products have been created, we are always here to provide new
+            innovations for you
+          </p>
+          <a href="#" class="greeting-banner__button"
+            ><i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

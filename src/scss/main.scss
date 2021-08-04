@@ -1,0 +1,189 @@
+// @import 'vars'; если используете scss-переменные - подключите сюда vars, но удалите root из _vars.scss
+
+@import "vars";
+@import "mixins";
+
+@import "./components/header";
+@import "./components/footer";
+
+body {
+  font-family: Gordita;
+}
+.container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.title {
+  font-family: Gordita;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  color: $title;
+}
+
+.header {
+  background-color: #ffffff;
+  z-index: 100;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.menu {
+  font-family: Gordita;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: $sub-title;
+  &__burger {
+    display: none;
+    @include mobile {
+      display: block;
+    }
+    span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: $title;
+      &:nth-child(2) {
+        margin: 4px 0;
+      }
+    }
+    &.active {
+      span {
+        &:nth-child(1) {
+          transform: rotate(+45deg) translate(5%, 15%);
+        }
+        &:nth-child(2) {
+          display: none;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(5%, -15%);
+        }
+      }
+    }
+  }
+  &__body {
+    @include mobile {
+      display: none;
+    }
+    &.active {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      //bottom: 0;
+      background-color: crimson;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: row;
+    &.active {
+      transform: translate(-50%, -0%);
+      display: flex;
+      position: absolute;
+      top: 65px;
+      left: 50%;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__item {
+    padding: 10px 12px;
+    &:first-child {
+      padding-left: 0px;
+    }
+    &:last-child {
+      padding-right: 0px;
+    }
+    &.column {
+      &:first-child {
+        padding-left: 12px;
+      }
+      &:last-child {
+        padding-right: 12px;
+      }
+    }
+  }
+}
+.greeting {
+  // Пофиксить отступ сверху когда хэдэр будет фиксированным
+  margin: 30px 0px 0px 0px;
+  &__container {
+    background: url("/img/greeting/Hero.png") right / cover no-repeat;
+    border-radius: 35px;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  &__content {
+    max-width: 470px;
+    margin: 0px 0px 0px 60px;
+  }
+  &__title {
+    margin: 0px 0px 20px 0px;
+    font-family: Gordita;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 71px;
+    color: #ffffff;
+  }
+  &__text {
+    margin: 0px 0px 20px 0px;
+    font-family: Gordita;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    color: #ffffff;
+  }
+  &__button {
+    display: inline-block;
+    padding: 15px 50px;
+    font-weight: 500;
+    font-size: 22px;
+    color: $sub-title;
+    background: #fafafa;
+    border-radius: 35px;
+  }
+  &__banner {
+  }
+}
+.greeting-banner {
+  width: 80%;
+  padding: 95px 60px 95px 45px;
+  position: absolute;
+  transform: translate(-50%, +100%);
+  bottom: 15%;
+  left: 50%;
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
+  border-radius: 35px;
+  background: url("/img/greeting/About-Us.png") 0 0 / cover no-repeat;
+  &__title {
+    color: #ffffff;
+    margin: 0 0 30px 0;
+  }
+  &__text {
+    font-family: Gordita;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    color: #ffffff;
+    margin: 0 0 5px 0;
+  }
+  &__button {
+    display: block;
+    margin-left: auto;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: right;
+  }
+}
+
