@@ -9,113 +9,108 @@
 body {
   font-family: Gordita;
 }
+
+.main-wrapper{
+  overflow: hidden;
+}
 .container {
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
   padding: 0 15px;
 }
-.title {
+.not-scrollable{
+  overflow: hidden;
+}
+.title-style {
   font-family: Gordita;
   font-style: normal;
   font-weight: 500;
   font-size: 36px;
   color: $title;
 }
-
-.header {
-  background-color: #ffffff;
-  z-index: 100;
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-.menu {
-  font-family: Gordita;
+.content-text-style {
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  color: $content-text;
+}
+.sub-title-style {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
   color: $sub-title;
-  &__burger {
-    display: none;
-    @include mobile {
-      display: block;
-    }
-    span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      background: $title;
-      &:nth-child(2) {
-        margin: 4px 0;
-      }
-    }
-    &.active {
-      span {
-        &:nth-child(1) {
-          transform: rotate(+45deg) translate(5%, 15%);
-        }
-        &:nth-child(2) {
-          display: none;
-        }
-        &:nth-child(3) {
-          transform: rotate(-45deg) translate(5%, -15%);
-        }
-      }
-    }
+}
+.border-radius {
+  border-radius: 35px;
+}
+.decorations-circle {
+  @include adaptiv-value('width', 150, 120, 1);
+  @include adaptiv-value('height', 150, 120, 1);
+  border-radius: 50%;
+  background: #fca311;
+  backdrop-filter: blur(10px);
+  &--transparent{
+    opacity: .5;
   }
-  &__body {
-    @include mobile {
-      display: none;
-    }
-    &.active {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      //bottom: 0;
-      background-color: crimson;
-    }
-  }
-  &__list {
-    display: flex;
-    flex-direction: row;
-    &.active {
-      transform: translate(-50%, -0%);
-      display: flex;
-      position: absolute;
-      top: 65px;
-      left: 50%;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  &__item {
-    padding: 10px 12px;
-    &:first-child {
-      padding-left: 0px;
-    }
-    &:last-child {
-      padding-right: 0px;
-    }
-    &.column {
-      &:first-child {
-        padding-left: 12px;
-      }
-      &:last-child {
-        padding-right: 12px;
-      }
-    }
+  &--litle{
+    @include adaptiv-value('width', 80, 60, 1);
+    @include adaptiv-value('height', 80, 60, 1);
   }
 }
+.decorations-semicircle {
+  @include adaptiv-value('width', 100, 75, 1);
+  @include adaptiv-value('height', 50, 30, 1);
+  border-bottom-right-radius: 50122px;
+  border-bottom-left-radius: 1px;
+  background: rgba(20, 33, 61);
+  &--transparent{
+    opacity: .5;
+  }
+}
+
+.img-text-grid {
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    width: 50%;
+    padding: 0px 50px 0px 0px;
+    margin: 0px 0px 80px 0px;
+    @include mobile {
+      &:nth-child(odd) {
+        padding: 0px 25px 0px 0px;
+      }
+      &:nth-child(even) {
+        padding: 0px 0px 0px 25px;
+      }
+    }
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    margin: 0px 0px 15px 0px;
+  }
+  &__img {
+    margin: 0px 15px 0px 0px;
+  }
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+    color: $sub-title;
+  }
+}
+
 .greeting {
   //todo Пофиксить отступ сверху когда хэдэр будет фиксированным
   margin: 30px 0px 0px 0px;
+  @include adaptiv-value("padding-bottom", 30, 18, 1);
   &__container {
+  }
+  &__body {
     background: url("/img/greeting/Hero.png") right / cover no-repeat;
-    border-radius: 35px;
     min-height: 700px;
     display: flex;
     align-items: center;
@@ -123,7 +118,8 @@ body {
   }
   &__content {
     max-width: 470px;
-    margin: 0px 0px 0px 60px;
+    @include adaptiv-value("margin-left", 60, 30, 1);
+    @include adaptiv-value("margin-right", 60, 30, 1);
   }
   &__title {
     margin: 0px 0px 20px 0px;
@@ -150,20 +146,29 @@ body {
     font-size: 22px;
     color: $sub-title;
     background: #fafafa;
-    border-radius: 35px;
+    @include mobile {
+      padding: 13px 25px;
+    }
   }
   &__banner {
   }
 }
 .greeting-banner {
   width: 80%;
-  padding: 95px 60px 95px 45px;
-  position: absolute;
-  transform: translate(-50%, +100%);
-  bottom: 15%;
-  left: 50%;
+  @include mobile {
+    width: 100%;
+  }
+  margin: -80px auto 0px auto;
+  @include mobile {
+    margin: -1px auto 0px auto;
+  }
+
+  @include adaptiv-value("padding-top", 95, 22, 1);
+  @include adaptiv-value("padding-bottom", 95, 22, 1);
+  @include adaptiv-value("padding-left", 60, 22, 1);
+  @include adaptiv-value("padding-right", 60, 22, 1);
+  position: relative;
   box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
-  border-radius: 35px;
   background: url("/img/greeting/About-Us.png") 0 0 / cover no-repeat;
   &__title {
     color: #ffffff;
@@ -184,17 +189,92 @@ body {
     color: #ffffff;
     font-size: 30px;
     text-align: right;
+    i {
+      color: #ffffff;
+    }
   }
 }
 .clients {
+  @include adaptiv-value("padding-top", 30, 18, 1);
+  @include adaptiv-value("padding-bottom", 60, 25, 1);
   &__container {
   }
   &__title {
+    margin: 0px 0px 30px 0px;
+    text-align: center;
   }
   &__description {
+    margin: 0px 0px 38px 0px;
+    text-align: center;
   }
-  &__items {
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   &__item {
+    margin: 17px 14px;
+  }
+}
+.services {
+  @include adaptiv-value("padding-top", 70, 30, 1);
+
+  &__container {
+    display: flex;
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+  &__img-wrapper {
+    width: 50%;
+    padding: 0px 85px 0px 0px;
+    position: relative;
+    @include mobile {
+      width: 100%;
+      margin: 0px 0px 35px 0px;
+      padding: 0px 0px 0px 0px;
+    }
+  }
+  &__decorations {
+    position: absolute;
+    &--top {
+      transform: translate(50%, -50%);
+      top: 5%;
+      @include mobile{
+        right: 0;
+      }
+      right: 75px;
+
+    }
+    &--bottom {
+      transform: translate(-50%, -50%);
+      bottom: 20%;
+      left: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    box-shadow: 45px 45px 1px -13px rgba(49, 60, 90, 0.23);
+    @include mobile {
+      box-shadow: none;
+    }
+  }
+  &__content {
+    width: 50%;
+    @include mobile {
+      width: 100%;
+    }
+  }
+  &__subtitle {
+    margin: 10px 0px 12px 0px;
+  }
+  &__title {
+    margin: 0px 0px 12px 0px;
+  }
+  &__text {
+    margin: 0px 0px 70px 0px;
   }
 }
