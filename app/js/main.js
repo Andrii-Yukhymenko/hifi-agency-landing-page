@@ -14,7 +14,20 @@ burgerElement.addEventListener("click", function () {
     item.classList.toggle("column");
   });
   body.classList.toggle("not-scrollable");
-}); // window.addEventListener("scroll", () => {
+});
+
+function ibg() {
+  var ibg = document.querySelectorAll(".ibg");
+
+  for (var i = 0; i < ibg.length; i++) {
+    if (ibg[i].querySelector("img")) {
+      ibg[i].style.backgroundImage = "url(" + ibg[i].querySelector("img").getAttribute("src") + ")";
+    }
+  }
+}
+
+ibg(); // Слайдер
+// window.addEventListener("scroll", () => {
 //   siteHeader.style =
 //     "position: fixed;" + "  top: 0;" + "  left: 0;" + "  right: 0;";
 // });

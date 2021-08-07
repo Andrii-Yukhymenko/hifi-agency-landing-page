@@ -1,16 +1,16 @@
 // @import 'vars'; если используете scss-переменные - подключите сюда vars, но удалите root из _vars.scss
 
-@import "vars";
-@import "mixins";
+@import 'vars';
+@import 'mixins';
 
-@import "./components/header";
-@import "./components/footer";
+@import './components/header';
+@import './components/footer';
 
 body {
   font-family: Gordita;
 }
 
-.main-wrapper{
+.main-wrapper {
   overflow: hidden;
 }
 .container {
@@ -18,7 +18,7 @@ body {
   margin: 0 auto;
   padding: 0 15px;
 }
-.not-scrollable{
+.not-scrollable {
   overflow: hidden;
 }
 .title-style {
@@ -45,16 +45,27 @@ body {
 .border-radius {
   border-radius: 35px;
 }
+.button {
+  display: inline-block;
+  padding: 15px 50px;
+  font-weight: 500;
+  font-size: 22px;
+  background: $sub-title;
+  color: #fafafa;
+  @include mobile {
+    padding: 13px 25px;
+  }
+}
 .decorations-circle {
   @include adaptiv-value('width', 150, 120, 1);
   @include adaptiv-value('height', 150, 120, 1);
   border-radius: 50%;
   background: #fca311;
   backdrop-filter: blur(10px);
-  &--transparent{
-    opacity: .5;
+  &--transparent {
+    opacity: 0.5;
   }
-  &--litle{
+  &--litle {
     @include adaptiv-value('width', 80, 60, 1);
     @include adaptiv-value('height', 80, 60, 1);
   }
@@ -62,11 +73,57 @@ body {
 .decorations-semicircle {
   @include adaptiv-value('width', 100, 75, 1);
   @include adaptiv-value('height', 50, 30, 1);
-  border-bottom-right-radius: 50122px;
-  border-bottom-left-radius: 1px;
-  background: rgba(20, 33, 61);
-  &--transparent{
-    opacity: .5;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  background: rgb(20, 33, 61);
+  &--transparent {
+    opacity: 0.5;
+  }
+}
+.decorations-dot-grid {
+}
+.ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.ibg img {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.slider-buttons {
+  display: flex;
+  &__button {
+    margin: 0px 40px 0px 0px;
+    @include adaptiv-value('margin-right', 40, 20, 1);
+    &:nth-child(2) {
+      margin: 0px 0px 0px 0px;
+    }
+    @include adaptiv-value('width', 80, 45, 1);
+    @include adaptiv-value('height', 80, 45, 1);
+    filter: drop-shadow(0px 25px 50px rgba(0, 0, 0, 0.08));
+    background: $title;
+    border-radius: 35px;
+    position: relative;
+    &--left {
+      transform: rotate(180deg);
+    }
+    &--right {
+    }
+  }
+  &__button-img {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-size: 27px;
+    color: #ffffff;
   }
 }
 
@@ -102,15 +159,26 @@ body {
     color: $sub-title;
   }
 }
+.img-grid {
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    width: 50%;
+    padding: 10px;
+  }
+  &__item-inner {
+    padding: 100% 0px 0px 0px;
+  }
+}
 
 .greeting {
   //todo Пофиксить отступ сверху когда хэдэр будет фиксированным
   margin: 30px 0px 0px 0px;
-  @include adaptiv-value("padding-bottom", 30, 18, 1);
+  @include adaptiv-value('padding-bottom', 30, 18, 1);
   &__container {
   }
   &__body {
-    background: url("/img/greeting/Hero.png") right / cover no-repeat;
+    background: url('/img/greeting/Hero.png') right / cover no-repeat;
     min-height: 700px;
     display: flex;
     align-items: center;
@@ -118,8 +186,8 @@ body {
   }
   &__content {
     max-width: 470px;
-    @include adaptiv-value("margin-left", 60, 30, 1);
-    @include adaptiv-value("margin-right", 60, 30, 1);
+    @include adaptiv-value('margin-left', 60, 30, 1);
+    @include adaptiv-value('margin-right', 60, 30, 1);
   }
   &__title {
     margin: 0px 0px 20px 0px;
@@ -140,15 +208,8 @@ body {
     color: #ffffff;
   }
   &__button {
-    display: inline-block;
-    padding: 15px 50px;
-    font-weight: 500;
-    font-size: 22px;
     color: $sub-title;
     background: #fafafa;
-    @include mobile {
-      padding: 13px 25px;
-    }
   }
   &__banner {
   }
@@ -163,13 +224,13 @@ body {
     margin: -1px auto 0px auto;
   }
 
-  @include adaptiv-value("padding-top", 95, 22, 1);
-  @include adaptiv-value("padding-bottom", 95, 22, 1);
-  @include adaptiv-value("padding-left", 60, 22, 1);
-  @include adaptiv-value("padding-right", 60, 22, 1);
+  @include adaptiv-value('padding-top', 95, 22, 1);
+  @include adaptiv-value('padding-bottom', 95, 22, 1);
+  @include adaptiv-value('padding-left', 60, 22, 1);
+  @include adaptiv-value('padding-right', 60, 22, 1);
   position: relative;
   box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
-  background: url("/img/greeting/About-Us.png") 0 0 / cover no-repeat;
+  background: url('/img/greeting/About-Us.png') 0 0 / cover no-repeat;
   &__title {
     color: #ffffff;
     margin: 0 0 30px 0;
@@ -195,8 +256,8 @@ body {
   }
 }
 .clients {
-  @include adaptiv-value("padding-top", 30, 18, 1);
-  @include adaptiv-value("padding-bottom", 60, 25, 1);
+  @include adaptiv-value('padding-top', 30, 18, 1);
+  @include adaptiv-value('padding-bottom', 60, 25, 1);
   &__container {
   }
   &__title {
@@ -218,8 +279,11 @@ body {
   }
 }
 .services {
-  @include adaptiv-value("padding-top", 70, 30, 1);
-
+  @include adaptiv-value('padding-top', 70, 30, 1);
+  @include adaptiv-value('padding-bottom', 95, 60, 1);
+  @include mobile {
+    padding-bottom: 0;
+  }
   &__container {
     display: flex;
     @include mobile {
@@ -241,11 +305,10 @@ body {
     &--top {
       transform: translate(50%, -50%);
       top: 5%;
-      @include mobile{
+      @include mobile {
         right: 0;
       }
       right: 75px;
-
     }
     &--bottom {
       transform: translate(-50%, -50%);
@@ -276,5 +339,115 @@ body {
   }
   &__text {
     margin: 0px 0px 70px 0px;
+  }
+}
+.process {
+  @include adaptiv-value('padding-top', 95, 40, 1);
+  @include adaptiv-value('padding-bottom', 100, 40, 1);
+  // todo пересмотреть паддинг
+  @include mobile {
+    padding-top: 0;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    @include mobile {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+  &__content {
+    width: 50%;
+    padding: 0px 70px 0px 0px;
+    @include mobile {
+      width: 100%;
+      padding: 0px 0px 0px 0px;
+      margin: 0px 0px 35px 0px;
+    }
+  }
+  &__title {
+    @include adaptiv-value('margin-bottom', 50, 20, 1);
+  }
+  &__text {
+    @include adaptiv-value('margin-bottom', 60, 25, 1);
+  }
+  &__button {
+  }
+  &__img-grid {
+    width: 50%;
+    position: relative;
+    @include mobile {
+      width: 100%;
+    }
+  }
+  &__decorations {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    &--top {
+      top: 0;
+      right: 0;
+    }
+    &--center {
+      top: 63%;
+      left: 0;
+      z-index: 2;
+    }
+    &--bottom {
+      bottom: -22%;
+      right: -37%;
+      z-index: -1;
+      @media (max-width: 500px) {
+        display: none;
+      }
+    }
+  }
+}
+.mini-portfolio {
+  @include adaptiv-value('padding-top', 100, 40, 1);
+  @include adaptiv-value('padding-bottom', 100, 40, 1);
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    @include adaptiv-value('margin-bottom', 90, 50, 1);
+  }
+  &__content {
+  }
+  &__sub-title {
+    @include adaptiv-value('margin-bottom', 15, 10, 1);
+  }
+  &__title {
+    @include adaptiv-value('margin-bottom', 15, 10, 1);
+  }
+  &__text {
+  }
+  &__controls {
+  }
+  &__slider {
+  }
+}
+.mini-portfolio-slider {
+  display: flex;
+  &__item {
+    width: 33.3%;
+    padding: 0px 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__img-wrapper {
+    width: 100%;
+    padding: 100% 0px 0px 0px;
+    margin: 0px 0px 35px 0px;
+  }
+  &__img {
+  }
+  &__title {
+    margin: 0px 0px 15px 0px;
+  }
+  &__text {
+    margin: 0px 0px 35px 0px;
+  }
+  &__button {
   }
 }
