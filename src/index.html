@@ -9,6 +9,7 @@
     <title>New site</title>
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="css/main.css" />
     <script src="https://kit.fontawesome.com/0c4465ee7a.js" crossorigin="anonymous"></script>
   </head>
@@ -172,55 +173,156 @@
               </p>
             </div>
             <div class="mini-portfolio__controls slider-buttons">
-              <div class="slider-buttons__button slider-buttons__button--left">
+              <button
+                class="
+                  mini-portfolio__controls-button mini-portfolio__controls-button--left
+                  slider-buttons__button slider-buttons__button--left
+                  swiper-button-prev
+                "
+              >
                 <i class="slider-buttons__button-img fas fa-arrow-right"></i>
-              </div>
-              <div class="slider-buttons__button slider-buttons__button--right">
+              </button>
+              <button
+                class="
+                  mini-portfolio__controls-button mini-portfolio__controls-button--right
+                  slider-buttons__button slider-buttons__button--right
+                  swiper-button-next
+                "
+              >
                 <i class="slider-buttons__button-img fas fa-arrow-right"></i>
-              </div>
+              </button>
             </div>
           </div>
-          <div class="mini-portfolio__slider mini-portfolio-slider">
-            <card class="mini-portfolio-slider__item">
-              <div class="mini-portfolio-slider__img-wrapper border-radius ibg">
-                <img
-                  src="img/mini-portfolio/card-1.png"
-                  alt=""
-                  class="mini-portfolio-slider__img"
-                />
-              </div>
-              <p class="mini-portfolio-slider__title title-style">PT. ABCDE</p>
-              <p class="mini-portfolio-slider__text content-text-style">Web Development</p>
-              <a href="#" class="mini-portfolio-slider__button button border-radius">See Details</a>
-            </card>
-            <card class="mini-portfolio-slider__item">
-              <div class="mini-portfolio-slider__img-wrapper border-radius ibg">
-                <img
-                  src="img/mini-portfolio/card-1.png"
-                  alt=""
-                  class="mini-portfolio-slider__img"
-                />
-              </div>
-              <p class="mini-portfolio-slider__title title-style">PT. ABCDE</p>
-              <p class="mini-portfolio-slider__text content-text-style">Web Development</p>
-              <a href="#" class="mini-portfolio-slider__button button border-radius">See Details</a>
-            </card>
-            <card class="mini-portfolio-slider__item">
-              <div class="mini-portfolio-slider__img-wrapper border-radius ibg">
-                <img
-                  src="img/mini-portfolio/card-1.png"
-                  alt=""
-                  class="mini-portfolio-slider__img"
-                />
-              </div>
-              <p class="mini-portfolio-slider__title title-style">PT. ABCDE</p>
-              <p class="mini-portfolio-slider__text content-text-style">Web Development</p>
-              <a href="#" class="mini-portfolio-slider__button button border-radius">See Details</a>
-            </card>
+          <div class="mini-portfolio__slider mini-portfolio-slider swiper-container">
+            <div class="mini-portfolio-slider__wrapper swiper-wrapper">
+              <card class="mini-portfolio-slider__item swiper-slide">
+                <div class="mini-portfolio-slider__img-wrapper border-radius ibg">
+                  <img
+                    src="img/mini-portfolio/card-1.png"
+                    alt=""
+                    class="mini-portfolio-slider__img"
+                  />
+                </div>
+                <p class="mini-portfolio-slider__title title-style">PT. ABCDE</p>
+                <p class="mini-portfolio-slider__text content-text-style">Web Development</p>
+                <a href="#" class="mini-portfolio-slider__button button border-radius"
+                  >See Details</a
+                >
+              </card>
+              <card class="mini-portfolio-slider__item swiper-slide">
+                <div class="mini-portfolio-slider__img-wrapper border-radius ibg">
+                  <img
+                    src="img/mini-portfolio/card-2.png"
+                    alt=""
+                    class="mini-portfolio-slider__img"
+                  />
+                </div>
+                <p class="mini-portfolio-slider__title title-style">PT. ABCDE</p>
+                <p class="mini-portfolio-slider__text content-text-style">Web Development</p>
+                <a href="#" class="mini-portfolio-slider__button button border-radius"
+                  >See Details</a
+                >
+              </card>
+              <card class="mini-portfolio-slider__item swiper-slide">
+                <div class="mini-portfolio-slider__img-wrapper border-radius ibg">
+                  <img
+                    src="img/mini-portfolio/card-3.png"
+                    alt=""
+                    class="mini-portfolio-slider__img"
+                  />
+                </div>
+                <p class="mini-portfolio-slider__title title-style">PT. ABCDE</p>
+                <p class="mini-portfolio-slider__text content-text-style">Web Development</p>
+                <a href="#" class="mini-portfolio-slider__button button border-radius"
+                  >See Details</a
+                >
+              </card>
+            </div>
           </div>
         </div>
       </section>
+      <section class="reviews">
+        <div class="reviews__container container">
+          <div class="reviews__img-slider reviews-img-slider swiper-container">
+            <div class="reviews-img-slider__wrapper swiper-wrapper">
+              <div class="reviews-img-slider__item border-radius ibg swiper-slide">
+                <img src="img/reviews/1.png" alt="" class="reviews-img-slider__img" />
+              </div>
+              <div class="reviews-img-slider__item border-radius ibg swiper-slide">
+                <img src="img/reviews/2.png" alt="" class="reviews-img-slider__img" />
+              </div>
+              <div class="reviews-img-slider__item border-radius ibg swiper-slide">
+                <img src="img/reviews/3.png" alt="" class="reviews-img-slider__img" />
+              </div>
+            </div>
+            <svg class="reviews__decorations reviews__decorations--top decorations-dot-grid">
+              <use xlink:href="img/sprite.svg#Dot-Grid"></use>
+            </svg>
+            <figure
+              class="reviews__decorations reviews__decorations--center decorations-square decorations-square--transparent"
+            ></figure>
+            <figure
+              class="reviews__decorations reviews__decorations--bottom decorations-circle decorations-circle--transparent"
+            ></figure>
+          </div>
+          <div class="reviews__text-slider reviews-text-slider swiper-container">
+            <div class="reviews-text-slider__wrapper swiper-wrapper">
+              <div class="reviews-text-slider__item swiper-slide">
+                <p class="reviews-text-slider__title title-style">#1 Testimonials by them</p>
+                <p class="reviews-text-slider__text content-text-style">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  <span class="reviews-text-slider__author sub-title-style">-Joe Z</span>
+                </p>
+              </div>
+              <div class="reviews-text-slider__item swiper-slide">
+                <p class="reviews-text-slider__title title-style">#2 Testimonials by them</p>
+                <p class="reviews-text-slider__text content-text-style">
+                  Lorem ipsum dolor sit ssssssssssssssssamet, consectetur adipiscing elit, sed do
+                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.
+                  <span class="reviews-text-slider__author sub-title-style">-Joe Z</span>
+                </p>
+              </div>
+              <div class="reviews-text-slider__item swiper-slide">
+                <p class="reviews-text-slider__title title-style">#3 Testimonials by them</p>
+                <p class="reviews-text-slider__text content-text-style">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et saaaaaaaaaaaaaaaaaaaadolore magna aliqua. Ut enim ad minim
+                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.
+                  <span class="reviews-text-slider__author sub-title-style">-Joe Z</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="reviews__controls slider-buttons">
+            <button
+              class="
+                reviews__controls-button reviews__controls-button--left
+                slider-buttons__button slider-buttons__button--left
+                swiper-button-prev
+              "
+            >
+              <i class="slider-buttons__button-img fas fa-arrow-right"></i>
+            </button>
+            <button
+              class="
+                reviews__controls-button reviews__controls-button--right
+                slider-buttons__button slider-buttons__button--right
+                swiper-button-next
+              "
+            >
+              <i class="slider-buttons__button-img fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+      <p class="sdf">sdfsdfsdf</p>
     </main>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

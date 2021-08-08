@@ -57,11 +57,10 @@ body {
   }
 }
 .decorations-circle {
-  @include adaptiv-value('width', 150, 120, 1);
-  @include adaptiv-value('height', 150, 120, 1);
+  @include adaptiv-value('width', 150, 60, 1);
+  @include adaptiv-value('height', 150, 60, 1);
   border-radius: 50%;
   background: #fca311;
-  backdrop-filter: blur(10px);
   &--transparent {
     opacity: 0.5;
   }
@@ -82,6 +81,14 @@ body {
 }
 .decorations-dot-grid {
 }
+.decorations-square {
+  @include adaptiv-value('width', 100, 40, 1);
+  @include adaptiv-value('height', 100, 40, 1);
+  background: rgba(252, 163, 17, 0.5);
+  &--transparent {
+    opacity: 0.5;
+  }
+}
 .ibg {
   background-position: center;
   background-size: cover;
@@ -101,7 +108,7 @@ body {
   display: flex;
   &__button {
     margin: 0px 40px 0px 0px;
-    @include adaptiv-value('margin-right', 40, 20, 1);
+    @include adaptiv-value('margin-right', 40, 30, 1);
     &:nth-child(2) {
       margin: 0px 0px 0px 0px;
     }
@@ -125,6 +132,11 @@ body {
     font-size: 27px;
     color: #ffffff;
   }
+}
+// Отключение иконки в кнопках слайдера
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: '';
 }
 
 .img-text-grid {
@@ -216,14 +228,11 @@ body {
 }
 .greeting-banner {
   width: 80%;
-  @include mobile {
-    width: 100%;
-  }
   margin: -80px auto 0px auto;
   @include mobile {
-    margin: -1px auto 0px auto;
+    margin: 30px auto 0px auto;
+    width: 100%;
   }
-
   @include adaptiv-value('padding-top', 95, 22, 1);
   @include adaptiv-value('padding-bottom', 95, 22, 1);
   @include adaptiv-value('padding-left', 60, 22, 1);
@@ -409,7 +418,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    @include adaptiv-value('margin-bottom', 90, 50, 1);
+    @include adaptiv-value('margin-bottom', 90, 40, 1);
+    @include mobile {
+      align-items: flex-start;
+      flex-direction: column;
+    }
   }
   &__content {
   }
@@ -420,20 +433,27 @@ body {
     @include adaptiv-value('margin-bottom', 15, 10, 1);
   }
   &__text {
+    margin: 0 0 20px 0;
   }
   &__controls {
+    @include mobile {
+      margin: 0 0 0 auto;
+    }
   }
   &__slider {
   }
 }
 .mini-portfolio-slider {
-  display: flex;
+  //display: flex;
   &__item {
     width: 33.3%;
     padding: 0px 4%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include mobile {
+      width: 100%;
+    }
   }
   &__img-wrapper {
     width: 100%;
@@ -449,5 +469,79 @@ body {
     margin: 0px 0px 35px 0px;
   }
   &__button {
+  }
+}
+.reviews {
+  @include adaptiv-value('padding-top', 100, 40, 1);
+  @include adaptiv-value('padding-bottom', 100, 40, 1);
+  &__container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+  &__img-slider {
+    overflow: visible;
+    width: 35%;
+    position: relative;
+  }
+  &__text-slider {
+    width: 65%;
+    padding: 0px 7%;
+  }
+  &__controls {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  &__decorations {
+    position: absolute;
+    transform: translate(50%, 50%);
+    &--top {
+      top: 15px;
+      right: 0;
+      z-index: 2;
+    }
+    &--center {
+      top: 30%;
+      left: -40px;
+      z-index: 2;
+    }
+    &--bottom {
+      bottom: 25%;
+      right: 0;
+      z-index: 2;
+    }
+  }
+}
+.reviews-img-slider {
+  position: relative;
+  @include mobile {
+    width: 70%;
+    margin: 0px 0px 35px 0px;
+  }
+  &__item {
+    padding: 155% 0px 0px 0px;
+  }
+  &__img {
+  }
+}
+.reviews-text-slider {
+  @include mobile {
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+  }
+  &__item {
+  }
+  &__title {
+    padding: 0px 0px 20px 0px;
+  }
+  &__text {
+    margin: 0px 0 60px 0;
+  }
+  &__author {
+    color: crimson;
   }
 }
