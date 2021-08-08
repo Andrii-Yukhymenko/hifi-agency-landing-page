@@ -123,6 +123,9 @@ body {
     }
     &--right {
     }
+    &:focus {
+      background: rgba(20, 33, 61, 0.5);
+    }
   }
   &__button-img {
     position: absolute;
@@ -182,6 +185,47 @@ body {
     padding: 100% 0px 0px 0px;
   }
 }
+.footer-menu {
+  &__list {
+  }
+  &__item {
+    cursor: pointer;
+    padding: 10px 10px 10px 0px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    color: $title;
+    &--active {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 28px;
+      color: $title;
+    }
+  }
+}
+.socials {
+  &__title {
+    padding: 10px 0px 0px 0px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    color: $title;
+  }
+  &__list {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    color: $title;
+  }
+  &__item {
+    cursor: pointer;
+    padding: 10px 10px 10px 0px;
+  }
+}
 
 .greeting {
   //todo Пофиксить отступ сверху когда хэдэр будет фиксированным
@@ -190,7 +234,6 @@ body {
   &__container {
   }
   &__body {
-    background: url('/img/greeting/Hero.png') right / cover no-repeat;
     min-height: 700px;
     display: flex;
     align-items: center;
@@ -472,8 +515,8 @@ body {
   }
 }
 .reviews {
-  @include adaptiv-value('padding-top', 100, 40, 1);
-  @include adaptiv-value('padding-bottom', 100, 40, 1);
+  @include adaptiv-value('padding-top', 50, 25, 1);
+  @include adaptiv-value('padding-bottom', 50, 25, 1);
   &__container {
     display: flex;
     align-items: center;

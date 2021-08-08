@@ -18,8 +18,8 @@
     @include('partials/header.html')
     <main class="main-wrapper">
       <section class="greeting">
-        <div class="greeting__container container">
-          <div class="greeting__body border-radius">
+        <div class="greeting__container container" style="background: url('/img/greeting/Hero.png') right / cover no-repeat;">
+          <div class="greeting__body border-radius ">
             <div class="greeting__content">
               <h1 class="greeting__title">Go digital with us</h1>
               <p class="greeting__text">
@@ -139,24 +139,24 @@
             <svg class="process__decorations process__decorations--bottom decorations-dot-grid">
               <use xlink:href="img/sprite.svg#Dot-Grid"></use>
             </svg>
-            <div class="img-grid__item border-radius">
-              <div class="img-grid__item-inner ibg">
+            <div class="img-grid__item">
+              <div class="img-grid__item-inner ibg border-radius">
                 <img src="img/process/img-grid-1.png" alt="" class="img-grid__item-img" />
               </div>
             </div>
-            <div class="img-grid__item border-radius">
-              <div class="img-grid__item-inner ibg">
-                <img src="img/process/img-grid-1.png" alt="" class="img-grid__item-img" />
+            <div class="img-grid__item">
+              <div class="img-grid__item-inner ibg border-radius">
+                <img src="img/process/img-grid-2.png" alt="" class="img-grid__item-img" />
               </div>
             </div>
-            <div class="img-grid__item border-radius">
-              <div class="img-grid__item-inner ibg">
-                <img src="img/process/img-grid-1.png" alt="" class="img-grid__item-img" />
+            <div class="img-grid__item">
+              <div class="img-grid__item-inner ibg border-radius">
+                <img src="img/process/img-grid-3.png" alt="" class="img-grid__item-img" />
               </div>
             </div>
-            <div class="img-grid__item border-radius">
-              <div class="img-grid__item-inner ibg">
-                <img src="img/process/img-grid-1.png" alt="" class="img-grid__item-img" />
+            <div class="img-grid__item">
+              <div class="img-grid__item-inner ibg border-radius">
+                <img src="img/process/img-grid-4.png" alt="" class="img-grid__item-img" />
               </div>
             </div>
           </div>
@@ -320,8 +320,8 @@
           </div>
         </div>
       </section>
-      <p class="sdf">sdfsdfsdf</p>
     </main>
+    @include('partials/footer.html')
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="js/main.js"></script>
   </body>
