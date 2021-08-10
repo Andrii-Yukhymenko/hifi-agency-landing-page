@@ -10,7 +10,7 @@ burgerElement.addEventListener('click', () => {
   menuList.classList.toggle('active');
   burgerElement.classList.toggle('active');
   menuItems.forEach((item) => {
-    item.classList.toggle('column');
+    item.classList.toggle('_mobile');
   });
   body.classList.toggle('not-scrollable');
 });

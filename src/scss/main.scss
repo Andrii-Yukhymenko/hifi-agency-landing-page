@@ -3,9 +3,6 @@
 @import 'vars';
 @import 'mixins';
 
-@import './components/header';
-@import './components/footer';
-
 body {
   font-family: Gordita;
 }
@@ -104,6 +101,13 @@ body {
   opacity: 0;
   visibility: hidden;
 }
+.section-padding-top {
+  @include adaptiv-value('padding-top', 50, 25, 1);
+}
+.section-padding-bottom {
+  @include adaptiv-value('padding-bottom', 50, 25, 1);
+}
+
 .slider-buttons {
   display: flex;
   &__button {
@@ -229,8 +233,6 @@ body {
 
 .greeting {
   //todo Пофиксить отступ сверху когда хэдэр будет фиксированным
-  margin: 30px 0px 0px 0px;
-  @include adaptiv-value('padding-bottom', 30, 18, 1);
   &__container {
   }
   &__body {
@@ -273,9 +275,10 @@ body {
   width: 80%;
   margin: -80px auto 0px auto;
   @include mobile {
-    margin: 30px auto 0px auto;
+    margin: 15px auto 0px auto;
     width: 100%;
   }
+  //todo пересмотреть эти падинги, может быть переделать их в проценты
   @include adaptiv-value('padding-top', 95, 22, 1);
   @include adaptiv-value('padding-bottom', 95, 22, 1);
   @include adaptiv-value('padding-left', 60, 22, 1);
@@ -308,8 +311,6 @@ body {
   }
 }
 .clients {
-  @include adaptiv-value('padding-top', 30, 18, 1);
-  @include adaptiv-value('padding-bottom', 60, 25, 1);
   &__container {
   }
   &__title {
@@ -331,8 +332,6 @@ body {
   }
 }
 .services {
-  @include adaptiv-value('padding-top', 70, 30, 1);
-  @include adaptiv-value('padding-bottom', 95, 60, 1);
   @include mobile {
     padding-bottom: 0;
   }
@@ -394,8 +393,6 @@ body {
   }
 }
 .process {
-  @include adaptiv-value('padding-top', 95, 40, 1);
-  @include adaptiv-value('padding-bottom', 100, 40, 1);
   // todo пересмотреть паддинг
   @include mobile {
     padding-top: 0;
@@ -455,8 +452,6 @@ body {
   }
 }
 .mini-portfolio {
-  @include adaptiv-value('padding-top', 100, 40, 1);
-  @include adaptiv-value('padding-bottom', 100, 40, 1);
   &__top {
     display: flex;
     justify-content: space-between;
@@ -515,8 +510,6 @@ body {
   }
 }
 .reviews {
-  @include adaptiv-value('padding-top', 50, 25, 1);
-  @include adaptiv-value('padding-bottom', 50, 25, 1);
   &__container {
     display: flex;
     align-items: center;
@@ -549,8 +542,9 @@ body {
     }
     &--center {
       top: 30%;
-      left: -40px;
+      left: -10%;
       z-index: 2;
+      transform: translate(0%, 0%);
     }
     &--bottom {
       bottom: 25%;
@@ -588,3 +582,6 @@ body {
     color: crimson;
   }
 }
+
+@import './components/header';
+@import './components/footer';

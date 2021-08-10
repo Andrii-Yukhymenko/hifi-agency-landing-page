@@ -1,25 +1,22 @@
 .footer {
-  @include adaptiv-value('padding-top', 50, 25, 1);
-  @include adaptiv-value('padding-bottom', 50, 25, 1);
   &__container {
-    //@include adaptiv-value('padding-top', 70, 35, 1);
-    padding-top: 30px;
-    padding-bottom: 30px;
+    @include adaptiv-value('padding-top', 70, 35, 1);
+    @include adaptiv-value('padding-bottom', 70, 35, 1);
+    position: relative;
   }
   &__top-wrapper {
     display: flex;
     justify-content: space-between;
-    //todo пересмотреть паддинги
-    @include adaptiv-value('padding-top', 70, 35, 1);
     @include adaptiv-value('margin-bottom', 120, 70, 1);
-    @include mobile{
+    @include mobile {
       flex-direction: column;
     }
   }
   &__content {
-    color: $title;@include mobile{
-    margin: 0px 0px 40px 0px;
-  }
+    color: $title;
+    @include mobile {
+      margin: 0px 0px 40px 0px;
+    }
   }
   &__navigations {
     display: flex;
@@ -44,5 +41,16 @@
   }
   &__copyright {
     color: $title;
+  }
+  &__decorations {
+    position: absolute;
+    &--bottom {
+      transform: translate(-50%, 0%);
+      bottom: 20%;
+      left: 0;
+      @include mobile{
+        display: none;
+      }
+    }
   }
 }
