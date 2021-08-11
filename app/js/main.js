@@ -6,8 +6,8 @@ var burgerElement = document.querySelector('.menu__burger'),
     menuItems = menuBody.querySelectorAll('.menu__item'),
     body = document.querySelector('body'),
     siteHeader = document.querySelector('.header'),
-    mainWrapper = document.querySelector('.main-wrapper'),
-    siteHeaderHeight = siteHeader.offsetHeight;
+    siteHeaderHeight = siteHeader.offsetHeight; // Обработчики событий
+
 burgerElement.addEventListener('click', function () {
   menuBody.classList.toggle('active');
   menuList.classList.toggle('active');
@@ -17,17 +17,16 @@ burgerElement.addEventListener('click', function () {
   });
   body.classList.toggle('not-scrollable');
 });
+window.addEventListener('scroll', function () {
+  var scrolled = getBodyScrollTop();
+  console.log(scrolled);
 
-function ibg() {
-  var ibg = document.querySelectorAll('.ibg');
-
-  for (var i = 0; i < ibg.length; i++) {
-    if (ibg[i].querySelector('img')) {
-      ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
-    }
+  if (scrolled >= siteHeaderHeight) {
+    siteHeader.classList.add('header--fixed');
+  } else {
+    siteHeader.classList.remove('header--fixed');
   }
-}
-
+});
 ibg(); // Слайдеры
 
 var miniPortfolioSlider = new Swiper('.mini-portfolio__slider', {
@@ -69,19 +68,19 @@ var reviewsTextSlider = new Swiper('.reviews-text-slider', {
   }
 });
 reviewsImgSlider.controller.control = reviewsTextSlider;
-reviewsTextSlider.controller.control = reviewsImgSlider;
-window.addEventListener('scroll', function () {
-  var scrolled = getBodyScrollTop();
-  console.log(scrolled);
-
-  if (scrolled >= siteHeaderHeight) {
-    siteHeader.classList.add('header--fixed');
-  } else {
-    siteHeader.classList.remove('header--fixed');
-  }
-});
+reviewsTextSlider.controller.control = reviewsImgSlider; // Функции
 
 function getBodyScrollTop() {
   return document.documentElement && document.documentElement.scrollTop || document.body && document.body.scrollTop;
+}
+
+function ibg() {
+  var ibg = document.querySelectorAll('.ibg');
+
+  for (var i = 0; i < ibg.length; i++) {
+    if (ibg[i].querySelector('img')) {
+      ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
+    }
+  }
 }
 //# sourceMappingURL=main.js.map

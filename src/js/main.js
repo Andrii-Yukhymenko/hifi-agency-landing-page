@@ -4,9 +4,9 @@ const burgerElement = document.querySelector('.menu__burger'),
   menuItems = menuBody.querySelectorAll('.menu__item'),
   body = document.querySelector('body'),
   siteHeader = document.querySelector('.header'),
-  mainWrapper = document.querySelector('.main-wrapper'),
   siteHeaderHeight = siteHeader.offsetHeight;
 
+// Обработчики событий
 burgerElement.addEventListener('click', () => {
   menuBody.classList.toggle('active');
   menuList.classList.toggle('active');
@@ -17,14 +17,16 @@ burgerElement.addEventListener('click', () => {
   body.classList.toggle('not-scrollable');
 });
 
-function ibg() {
-  let ibg = document.querySelectorAll('.ibg');
-  for (var i = 0; i < ibg.length; i++) {
-    if (ibg[i].querySelector('img')) {
-      ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
-    }
+window.addEventListener('scroll', () => {
+  let scrolled = getBodyScrollTop();
+  console.log(scrolled);
+  if (scrolled >= siteHeaderHeight) {
+    siteHeader.classList.add('header--fixed');
+  } else {
+    siteHeader.classList.remove('header--fixed');
   }
-}
+});
+
 
 ibg();
 
@@ -76,19 +78,19 @@ const reviewsTextSlider = new Swiper('.reviews-text-slider', {
 reviewsImgSlider.controller.control = reviewsTextSlider;
 reviewsTextSlider.controller.control = reviewsImgSlider;
 
-window.addEventListener('scroll', () => {
-  let scrolled = getBodyScrollTop();
-  console.log(scrolled);
-  if (scrolled >= siteHeaderHeight) {
-    siteHeader.classList.add('header--fixed');
-  } else {
-    siteHeader.classList.remove('header--fixed');
-  }
-});
-
+// Функции
 function getBodyScrollTop() {
   return (
     (document.documentElement && document.documentElement.scrollTop) ||
     (document.body && document.body.scrollTop)
   );
+}
+
+function ibg() {
+  let ibg = document.querySelectorAll('.ibg');
+  for (var i = 0; i < ibg.length; i++) {
+    if (ibg[i].querySelector('img')) {
+      ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
+    }
+  }
 }
