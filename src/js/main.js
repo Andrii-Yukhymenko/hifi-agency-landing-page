@@ -47,7 +47,7 @@ const reviewsImgSlider = new Swiper('.reviews-img-slider', {
   slidesPerView: 1,
   effect: 'fade',
   fadeEffect: {
-    crossFade: true
+    crossFade: true,
   },
 
   navigation: {
@@ -61,8 +61,9 @@ const reviewsTextSlider = new Swiper('.reviews-text-slider', {
   slidesPerView: 1,
   effect: 'fade',
   fadeEffect: {
-    crossFade: true
+    crossFade: true,
   },
+  autoHeight: true,
 
   navigation: {
     nextEl: '.reviews__controls-button--right',

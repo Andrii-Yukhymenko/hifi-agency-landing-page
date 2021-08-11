@@ -60,6 +60,7 @@ var reviewsTextSlider = new Swiper('.reviews-text-slider', {
   fadeEffect: {
     crossFade: true
   },
+  autoHeight: true,
   navigation: {
     nextEl: '.reviews__controls-button--right',
     prevEl: '.reviews__controls-button--left'
