@@ -1,4 +1,5 @@
 .header {
+  padding: 5px 0px;
   background-color: #ffffff;
   z-index: 100;
   position: relative;
@@ -6,6 +7,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  &--fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    //background-color: #303948;
+    //color: #fafafa;
+    //border-bottom: #14213D 5px solid;
+    box-shadow: 0px 8px 8px 0px rgba(34, 60, 80, 0.2);
+    transition: ease 0.5s;
+
   }
 }
 .menu {

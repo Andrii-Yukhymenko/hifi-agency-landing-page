@@ -5,7 +5,9 @@ var burgerElement = document.querySelector('.menu__burger'),
     menuList = menuBody.querySelector('.menu__list'),
     menuItems = menuBody.querySelectorAll('.menu__item'),
     body = document.querySelector('body'),
-    siteHeader = document.querySelector('.header');
+    siteHeader = document.querySelector('.header'),
+    mainWrapper = document.querySelector('.main-wrapper'),
+    siteHeaderHeight = siteHeader.offsetHeight;
 burgerElement.addEventListener('click', function () {
   menuBody.classList.toggle('active');
   menuList.classList.toggle('active');
@@ -67,8 +69,19 @@ var reviewsTextSlider = new Swiper('.reviews-text-slider', {
   }
 });
 reviewsImgSlider.controller.control = reviewsTextSlider;
-reviewsTextSlider.controller.control = reviewsImgSlider; // window.addEventListener("scroll", () => {
-//   siteHeader.style =
-//     "position: fixed;" + "  top: 0;" + "  left: 0;" + "  right: 0;";
-// });
+reviewsTextSlider.controller.control = reviewsImgSlider;
+window.addEventListener('scroll', function () {
+  var scrolled = getBodyScrollTop();
+  console.log(scrolled);
+
+  if (scrolled >= siteHeaderHeight) {
+    siteHeader.classList.add('header--fixed');
+  } else {
+    siteHeader.classList.remove('header--fixed');
+  }
+});
+
+function getBodyScrollTop() {
+  return document.documentElement && document.documentElement.scrollTop || document.body && document.body.scrollTop;
+}
 //# sourceMappingURL=main.js.map
